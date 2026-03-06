@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+{% block page_title %}{{ title }}{% endblock %}
+
+{% block content %}
+<div class="card shadow-sm border-0">
+    <div class="card-header bg-white">
+        <h5 class="mb-0">{{ title }}</h5>
+    </div>
+
+    <div class="card-body">
+        <form method="post">
+            {% csrf_token %}
+
+            <div class="row g-3">
+
+                <div class="col-md-6">
+                    <label class="form-label">Nombre</label>
+                    {{ form.first_name }}
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label">Apellido</label>
+                    {{ form.last_name }}
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label">Correo</label>
+                    {{ form.email }}
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label">Teléfono</label>
+                    {{ form.phone }}
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label">Género</label>
+                    {{ form.gender }}
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label">Fecha de nacimiento</label>
+                    {{ form.birth_date }}
+                </div>
+
+                <div class="col-12">
+                    <div class="form-check">
+                        {{ form.is_active }}
+                        <label class="form-check-label">Activo</label>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="mt-4">
+                <button type="submit" class="btn btn-primary">
+                    Guardar
+                </button>
+
+                <a href="{% url 'alumno:list' %}" class="btn btn-secondary">
+                    Cancelar
+                </a>
+            </div>
+
+        </form>
+    </div>
+</div>
+{% endblock %}
