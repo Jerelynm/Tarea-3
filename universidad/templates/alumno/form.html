@@ -14,13 +14,23 @@
             {% csrf_token %}
 
             <div class="row g-3">
+<<<<<<< HEAD
                 <div class="col-md-6">
                     <label class="form-label">Nombres</label>
+=======
+
+                <div class="col-md-6">
+                    <label class="form-label">Nombre</label>
+>>>>>>> 6d16f6d7cd60d839137d3a3c0d7d2f33dbca1ca7
                     {{ form.first_name }}
                 </div>
 
                 <div class="col-md-6">
+<<<<<<< HEAD
                     <label class="form-label">Apellidos</label>
+=======
+                    <label class="form-label">Apellido</label>
+>>>>>>> 6d16f6d7cd60d839137d3a3c0d7d2f33dbca1ca7
                     {{ form.last_name }}
                 </div>
 
@@ -29,34 +39,50 @@
                     {{ form.email }}
                 </div>
 
+<<<<<<< HEAD
                 {% if form.phone %}
+=======
+>>>>>>> 6d16f6d7cd60d839137d3a3c0d7d2f33dbca1ca7
                 <div class="col-md-6">
                     <label class="form-label">Teléfono</label>
                     {{ form.phone }}
                 </div>
+<<<<<<< HEAD
                 {% endif %}
 
                 {% if form.gender %}
+=======
+
+>>>>>>> 6d16f6d7cd60d839137d3a3c0d7d2f33dbca1ca7
                 <div class="col-md-6">
                     <label class="form-label">Género</label>
                     {{ form.gender }}
                 </div>
+<<<<<<< HEAD
                 {% endif %}
 
                 {% if form.birth_date %}
+=======
+
+>>>>>>> 6d16f6d7cd60d839137d3a3c0d7d2f33dbca1ca7
                 <div class="col-md-6">
                     <label class="form-label">Fecha de nacimiento</label>
                     {{ form.birth_date }}
                 </div>
+<<<<<<< HEAD
                 {% endif %}
 
                 {% if form.is_active %}
+=======
+
+>>>>>>> 6d16f6d7cd60d839137d3a3c0d7d2f33dbca1ca7
                 <div class="col-12">
                     <div class="form-check">
                         {{ form.is_active }}
                         <label class="form-check-label">Activo</label>
                     </div>
                 </div>
+<<<<<<< HEAD
                 {% endif %}
             </div>
 
@@ -70,10 +96,24 @@
                 <button type="submit" class="btn btn-primary">
                     <i class="bi bi-save me-1"></i> Guardar
                 </button>
+=======
+
+            </div>
+
+            <div class="mt-4">
+                <button type="submit" class="btn btn-primary">
+                    Guardar
+                </button>
+
+>>>>>>> 6d16f6d7cd60d839137d3a3c0d7d2f33dbca1ca7
                 <a href="{% url 'alumno:list' %}" class="btn btn-secondary">
                     Cancelar
                 </a>
             </div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6d16f6d7cd60d839137d3a3c0d7d2f33dbca1ca7
         </form>
     </div>
 </div>
