@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Eliminar alumno{% endblock %}
+{% block page_title %}Eliminar alumno{% endblock %}
+
+{% block content %}
+<div class="card shadow-sm border-0">
+    <div class="card-header bg-white">
+        <h5 class="mb-0">Confirmar eliminación</h5>
+    </div>
+
+    <div class="card-body">
+        <p>
+            ¿Seguro que deseas eliminar a
+            <strong>{{ alumno.first_name }} {{ alumno.last_name }}</strong>?
+        </p>
+
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">
+                <i class="bi bi-trash me-1"></i> Eliminar
+            </button>
+            <a href="{% url 'alumno:list' %}" class="btn btn-secondary">
+                Cancelar
+            </a>
+        </form>
+    </div>
+</div>
+{% endblock %}

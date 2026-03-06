@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}Detalle del alumno{% endblock %}
+{% block page_title %}Detalle del alumno{% endblock %}
+
+{% block content %}
+<div class="card shadow-sm border-0">
+    <div class="card-header bg-white d-flex justify-content-between align-items-center">
+        <h5 class="mb-0">Detalle del alumno</h5>
+        <div class="d-flex gap-2">
+            <a href="{% url 'alumno:edit' alumno.pk %}" class="btn btn-primary btn-sm">
+                <i class="bi bi-pencil-square me-1"></i> Editar
+            </a>
+            <a href="{% url 'alumno:list' %}" class="btn btn-secondary btn-sm">
+                Volver
+            </a>
+        </div>
+    </div>
+
+    <div class="card-body">
+        <p><strong>ID:</strong> {{ alumno.id }}</p>
+        <p><strong>Nombres:</strong> {{ alumno.first_name }}</p>
+        <p><strong>Apellidos:</strong> {{ alumno.last_name }}</p>
+        <p><strong>Correo:</strong> {{ alumno.email }}</p>
+
+        {% if alumno.phone %}
+        <p><strong>Teléfono:</strong> {{ alumno.phone }}</p>
+        {% endif %}
+
+        {% if alumno.gender %}
+        <p><strong>Género:</strong> {{ alumno.get_gender_display }}</p>
+        {% endif %}
+
+        {% if alumno.birth_date %}
+        <p><strong>Fecha de nacimiento:</strong> {{ alumno.birth_date }}</p>
+        {% endif %}
+
+        {% if alumno.is_active %}
+        <p><strong>Estado:</strong> Activo</p>
+        {% else %}
+        <p><strong>Estado:</strong> Inactivo</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
