@@ -26,4 +26,14 @@ urlpatterns = [
 path('', views.dashboard, name='dashboard'),
     path('admin/', admin.site.urls),
     path('alumnos/', include('universidad.Models.Alumno.urls')),
+
+path('cursos/', views.cursos, name='cursos'),
+
+path('calificaciones/', views.calificaciones, name='calificaciones'),
+
+path('catedraticos/', views.catedraticos, name='catedraticos'),
+
+path('asignacion-curso/', views.asignacion_curso, name='asignacion_curso'),
+
+path('inscripcion-alumno/', views.inscripcion_alumno, name='inscripcion_alumno'),
 ]

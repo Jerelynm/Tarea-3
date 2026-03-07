@@ -182,13 +182,29 @@
     </a>
 
     <!-- Módulos futuros -->
-    <a href="#" class="nav-link">
-        <i class="bi bi-journal-bookmark-fill"></i> Cursos
-    </a>
-    <a href="#" class="nav-link">
-        <i class="bi bi-clipboard2-check-fill"></i> Calificaciones
-    </a>
+   <a href="{% url 'cursos' %}"
+   class="nav-link {% if request.resolver_match.url_name == 'cursos' %}active{% endif %}">
+    <i class="bi bi-journal-bookmark-fill"></i> Cursos
+</a>
+    <a href="{% url 'calificaciones' %}"
+   class="nav-link {% if request.resolver_match.url_name == 'calificaciones' %}active{% endif %}">
+    <i class="bi bi-clipboard2-check-fill"></i> Calificaciones
+</a>
 
+<a href="{% url 'catedraticos' %}"
+   class="nav-link {% if request.resolver_match.url_name == 'catedraticos' %}active{% endif %}">
+    <i class="bi bi-person-badge-fill"></i> Catedráticos
+</a>
+
+<a href="{% url 'asignacion_curso' %}"
+   class="nav-link {% if request.resolver_match.url_name == 'asignacion_curso' %}active{% endif %}">
+    <i class="bi bi-diagram-3-fill"></i> Asignación Curso
+</a>
+
+<a href="{% url 'inscripcion_alumno' %}"
+   class="nav-link {% if request.resolver_match.url_name == 'inscripcion_alumno' %}active{% endif %}">
+    <i class="bi bi-card-checklist"></i> Inscripción Alumno
+</a>
     <div class="nav-section">Sistema</div>
     <a href="#" class="nav-link">
         <i class="bi bi-gear-fill"></i> Configuración
