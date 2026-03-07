@@ -1,10 +1,101 @@
-#conexion a la base
 {% extends 'base.html' %}
 
-##titulo de la pagina
-{% block title %} lista de alumnos{% endblock %}
+{% block title %}Lista de alumnos{% endblock %}
+{% block page_title %}Gestión de alumnos{% endblock %}
 
+<<<<<<< HEAD
 ##titulo del encabezado
 {% block page_title %} Gestion de alumnos{% endblock %}
+=======
+{% block content %}
+<div class="card shadow-sm border-0">
+    <div class="card-header bg-white d-flex justify-content-between align-items-center">
+        <h5 class="mb-0">Lista de alumnos</h5>
+        <a href="{% url 'alumno:create' %}" class="btn btn-primary btn-sm">
+            <i class="bi bi-plus-circle me-1"></i> Nuevo alumno
+        </a>
+    </div>
+>>>>>>> 4eeaab87cc8d0a25d934f555b9af8e9722826c71
 
+    <div class="card-body">
+        <form method="get" class="mb-3">
+            <div class="input-group">
+<<<<<<< HEAD
+                <input type="text"
+                       name="q"
+                       value="{{ query }}"
+                       class="form-control"
+=======
+                <input type="text" name="q" value="{{ query }}" class="form-control"
+>>>>>>> 6d16f6d7cd60d839137d3a3c0d7d2f33dbca1ca7
+                       placeholder="Buscar por nombre, apellido o correo">
+                <button type="submit" class="btn btn-outline-secondary">
+                    <i class="bi bi-search"></i> Buscar
+                </button>
+            </div>
+        </form>
 
+<<<<<<< HEAD
+=======
+        <div class="table-responsive">
+            <table class="table table-hover align-middle">
+                <thead class="table-light">
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombres</th>
+                        <th>Apellidos</th>
+                        <th>Correo</th>
+<<<<<<< HEAD
+=======
+                        <th>Teléfono</th>
+                        <th>Estado</th>
+>>>>>>> 6d16f6d7cd60d839137d3a3c0d7d2f33dbca1ca7
+                        <th class="text-center">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for alumno in alumnos %}
+                    <tr>
+                        <td>{{ alumno.id }}</td>
+                        <td>{{ alumno.first_name }}</td>
+                        <td>{{ alumno.last_name }}</td>
+                        <td>{{ alumno.email }}</td>
+<<<<<<< HEAD
+=======
+                        <td>{{ alumno.phone }}</td>
+                        <td>
+                            {% if alumno.is_active %}
+                                <span class="badge bg-success">Activo</span>
+                            {% else %}
+                                <span class="badge bg-secondary">Inactivo</span>
+                            {% endif %}
+                        </td>
+>>>>>>> 6d16f6d7cd60d839137d3a3c0d7d2f33dbca1ca7
+                        <td class="text-center">
+                            <a href="{% url 'alumno:detail' alumno.pk %}" class="btn btn-sm btn-outline-info">
+                                <i class="bi bi-eye"></i>
+                            </a>
+                            <a href="{% url 'alumno:edit' alumno.pk %}" class="btn btn-sm btn-outline-primary">
+                                <i class="bi bi-pencil-square"></i>
+                            </a>
+                            <a href="{% url 'alumno:delete' alumno.pk %}" class="btn btn-sm btn-outline-danger">
+                                <i class="bi bi-trash"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+<<<<<<< HEAD
+                        <td colspan="5" class="text-center text-muted">No hay alumnos registrados.</td>
+=======
+                        <td colspan="7" class="text-center text-muted">No hay alumnos registrados.</td>
+>>>>>>> 6d16f6d7cd60d839137d3a3c0d7d2f33dbca1ca7
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
+>>>>>>> 4eeaab87cc8d0a25d934f555b9af8e9722826c71
